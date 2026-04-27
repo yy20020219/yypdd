@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>拼多多商城</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-text">拼多多</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索商品">
+                <button class="search-btn">搜索</button>
+            </div>
+            <div class="header-icons">
+                <div class="icon-item">
+                    <span class="icon-message"></span>
+                </div>
+                <div class="icon-item cart-icon">
+                    <span class="icon-cart"></span>
+                    <span class="cart-badge">3</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 首页 -->
+        <div id="home-page" class="page active">
+            <!-- 下拉刷新提示 -->
+            <div class="pull-refresh" id="pull-refresh">
+                <div class="refresh-icon"></div>
+                <span class="refresh-text">下拉刷新</span>
+            </div>
+
+            <!-- 轮播图 -->
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=时尚服装广告图%2C红色背景%2C促销活动%2C高质量%2C专业摄影&image_size=landscape_16_9" alt="广告图1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=电子产品促销广告%2C蓝色渐变背景%2C特价优惠%2C高质量%2C专业摄影&image_size=landscape_16_9" alt="广告图2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=美妆产品广告%2C粉色背景%2C新品上市%2C高质量%2C专业摄影&image_size=landscape_16_9" alt="广告图3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=家居用品促销%2C绿色自然背景%2C限时折扣%2C高质量%2C专业摄影&image_size=landscape_16_9" alt="广告图4">
+                    </div>
+                </div>
+                <div class="carousel-indicators" id="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+
+            <!-- 功能入口 -->
+            <div class="category-nav">
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #FF6B81;"></div>
+                    <span class="category-text">百亿补贴</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #FFD700;"></div>
+                    <span class="category-text">限时秒杀</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #4CAF50;"></div>
+                    <span class="category-text">品牌特卖</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #2196F3;"></div>
+                    <span class="category-text">多多买菜</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #9C27B0;"></div>
+                    <span class="category-text">多多果园</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #FF9800;"></div>
+                    <span class="category-text">多多牧场</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #E91E63;"></div>
+                    <span class="category-text">多多视频</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon" style="background-color: #00BCD4;"></div>
+                    <span class="category-text">多多钱包</span>
+                </div>
+            </div>
+
+            <!-- 商品瀑布流 -->
+            <div class="products-container" id="products-container">
+                <div class="products-column" id="column-1">
+                    <!-- 商品将通过JS动态添加 -->
+                </div>
+                <div class="products-column" id="column-2">
+                    <!-- 商品将通过JS动态添加 -->
+                </div>
+            </div>
+
+            <!-- 加载更多 -->
+            <div class="load-more" id="load-more">
+                <div class="loading-spinner"></div>
+                <span>加载中...</span>
+            </div>
+        </div>
+
+        <!-- 商品详情页 -->
+        <div id="detail-page" class="page">
+            <!-- 详情页顶部导航 -->
+            <div class="detail-header">
+                <button class="back-btn" id="back-btn">返回</button>
+                <h1 class="detail-title" id="detail-title">商品详情</h1>
+                <button class="share-btn" id="share-btn">分享</button>
+            </div>
+
+            <!-- 商品图片轮播 -->
+            <div class="detail-carousel-container">
+                <div class="detail-carousel" id="detail-carousel">
+                    <!-- 图片将通过JS动态添加 -->
+                </div>
+                <div class="detail-carousel-indicators" id="detail-carousel-indicators">
+                    <!-- 指示器将通过JS动态添加 -->
+                </div>
+            </div>
+
+            <!-- 价格区域 -->
+            <div class="price-section" id="price-section">
+                <div class="current-price">
+                    <span class="price-label">券后价</span>
+                    <span class="price-symbol">¥</span>
+                    <span class="price-value" id="detail-price">99.9</span>
+                </div>
+                <div class="original-price">
+                    <span class="original-price-label">原价</span>
+                    <span class="original-price-value" id="detail-original-price">199.9</span>
+                </div>
+                <div class="sales-info">
+                    <span class="sales-count" id="detail-sales">已拼1234件</span>
+                </div>
+            </div>
+
+            <!-- 标签区域 -->
+            <div class="tags-section">
+                <div class="tag-item">
+                    <span class="tag-icon">✓</span>
+                    <span class="tag-text">正品保障</span>
+                </div>
+                <div class="tag-item">
+                    <span class="tag-icon">7</span>
+                    <span class="tag-text">7天无理由</span>
+                </div>
+                <div class="tag-item">
+                    <span class="tag-icon">⚡</span>
+                    <span class="tag-text">极速退款</span>
+                </div>
+            </div>
+
+            <!-- 商品详情 -->
+            <div class="detail-info" id="detail-info">
+                <h3>商品详情</h3>
+                <div class="detail-images" id="detail-images">
+                    <!-- 详情图片将通过JS动态添加 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 购物车页面 -->
+        <div id="cart-page" class="page">
+            <div class="cart-header">
+                <h2>购物车</h2>
+                <button class="edit-btn" id="edit-cart-btn">编辑</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- 购物车商品将通过JS动态添加 -->
+            </div>
+            <div class="empty-cart" id="empty-cart" style="display: none;">
+                <div class="empty-icon"></div>
+                <p>购物车是空的，快去选购吧！</p>
+                <button class="go-shopping-btn" id="go-shopping-btn">去逛逛</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部Tab导航 -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" data-page="home">
+            <div class="nav-icon home-icon"></div>
+            <span class="nav-text">首页</span>
+        </div>
+        <div class="nav-item" data-page="category">
+            <div class="nav-icon category-icon"></div>
+            <span class="nav-text">分类</span>
+        </div>
+        <div class="nav-item" data-page="moments">
+            <div class="nav-icon moments-icon"></div>
+            <span class="nav-text">拼小圈</span>
+        </div>
+        <div class="nav-item" data-page="chat">
+            <div class="nav-icon chat-icon"></div>
+            <span class="nav-text">聊天</span>
+        </div>
+        <div class="nav-item" data-page="profile">
+            <div class="nav-icon profile-icon"></div>
+            <span class="nav-text">个人中心</span>
+        </div>
+    </nav>
+
+    <!-- 详情页底部固定栏 -->
+    <div class="detail-bottom-bar" id="detail-bottom-bar" style="display: none;">
+        <div class="detail-action-item">
+            <div class="detail-action-icon chat-icon"></div>
+            <span class="detail-action-text">客服</span>
+        </div>
+        <div class="detail-action-item" id="favorite-btn">
+            <div class="detail-action-icon favorite-icon"></div>
+            <span class="detail-action-text">收藏</span>
+        </div>
+        <div class="detail-action-item">
+            <div class="detail-action-icon shop-icon"></div>
+            <span class="detail-action-text">店铺</span>
+        </div>
+        <button class="buy-btn single-buy-btn" id="single-buy-btn">单独购买</button>
+        <button class="buy-btn group-buy-btn" id="group-buy-btn">发起拼单</button>
+    </div>
+
+    <!-- 购物车底部结算栏 -->
+    <div class="cart-bottom-bar" id="cart-bottom-bar" style="display: none;">
+        <div class="select-all-container">
+            <input type="checkbox" id="select-all-checkbox" class="select-checkbox">
+            <label for="select-all-checkbox" class="select-label">全选</label>
+        </div>
+        <div class="total-container">
+            <span class="total-label">合计：</span>
+            <span class="total-symbol">¥</span>
+            <span class="total-value" id="cart-total">0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">去结算(0)</button>
+    </div>
+
+    <!-- 图片预览模态框 -->
+    <div class="modal" id="image-preview-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <img id="preview-image" src="" alt="预览图片">
+        </div>
+    </div>
+
+    <!-- 确认弹窗 -->
+    <div class="modal" id="confirm-modal">
+        <div class="modal-content confirm-modal">
+            <h3 class="confirm-title">确认删除</h3>
+            <p class="confirm-message" id="confirm-message">确定要删除这件商品吗？</p>
+            <div class="confirm-buttons">
+                <button class="confirm-btn cancel-btn" id="cancel-btn">取消</button>
+                <button class="confirm-btn delete-btn" id="confirm-delete-btn">删除</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
